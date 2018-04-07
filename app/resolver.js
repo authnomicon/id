@@ -1,4 +1,4 @@
-exports = module.exports = function(IoC, logger) {
+exports = module.exports = function(IoC, mx, logger) {
   // Load modules.
   var fingro = require('fingro');
   
@@ -15,6 +15,8 @@ exports = module.exports = function(IoC, logger) {
             resolver.use(protocol);
             logger.info('Loaded identity resolution protocol: ' + components[i].a['@name']);
           });
+          
+          resolver.use(mx);
         })
         .then(function() {
           return resolver;
@@ -26,4 +28,8 @@ exports = module.exports = function(IoC, logger) {
 };
 
 exports['@singleton'] = true;
-exports['@require'] = [ '!container', 'http://i.bixbyjs.org/Logger' ];
+exports['@require'] = [
+  '!container',
+  './mx/protocol',
+  'http://i.bixbyjs.org/Logger'
+];
