@@ -3,7 +3,7 @@
 var expect = require('chai').expect;
 
 
-describe('@authnomicon/federation', function() {
+describe('@authnomicon/id', function() {
   
   describe('package.json', function() {
     var json = require('../package.json');
