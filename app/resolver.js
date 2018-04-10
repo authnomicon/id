@@ -7,17 +7,32 @@ exports = module.exports = function(IoC, webfinger, lrdd, mx, logger) {
   
   return Promise.resolve(resolver)
     .then(function(resolver) {
-      var components = IoC.components('http://schemas.authnomicon.org/js/id/ResolutionProtocol');
+      var components = IoC.components('http://schemas.authnomicon.org/js/id/EntityResolutionProtocol');
       
       return Promise.all(components.map(function(comp) { return comp.create(); } ))
         .then(function(protocols) {
           protocols.forEach(function(protocol, i) {
             resolver.use(protocol);
-            logger.info('Loaded identity resolution protocol: ' + components[i].a['@name']);
+            logger.info('Loaded entity-based identity resolution protocol: ' + components[i].a['@name']);
           });
           
           //resolver.use(webfinger);
           resolver.use(lrdd);
+        })
+        .then(function() {
+          return resolver;
+        });
+    })
+    .then(function(resolver) {
+      var components = IoC.components('http://schemas.authnomicon.org/js/id/HostResolutionProtocol');
+      
+      return Promise.all(components.map(function(comp) { return comp.create(); } ))
+        .then(function(protocols) {
+          protocols.forEach(function(protocol, i) {
+            resolver.use(protocol);
+            logger.info('Loaded host-based identity resolution protocol: ' + components[i].a['@name']);
+          });
+          
           //resolver.use(mx);
         })
         .then(function() {
