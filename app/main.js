@@ -1,3 +1,4 @@
+// A name server for people and objects
 exports = module.exports = function(resolver) {
   var api = {};
   
@@ -8,7 +9,7 @@ exports = module.exports = function(resolver) {
   return api;
 };
 
-exports['@implements'] = 'http://schemas.authnomicon.org/js/id';
+exports['@implements'] = 'http://schemas.authnomicon.org/js/ns';
 exports['@singleton'] = true;
 exports['@require'] = [
   './resolver'

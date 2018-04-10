@@ -1,17 +1,17 @@
 {
-  "name": "@authnomicon/id",
+  "name": "@authnomicon/ns",
   "version": "0.0.0",
-  "description": "",
+  "description": "Naming service components for the Authnomicon project.",
   "author": {
     "name": "Jared Hanson",
     "email": "jaredhanson@gmail.com",
     "url": "http://jaredhanson.net/"
   },
   "repository": {    "type": "git",
-    "url": "git://github.com/authnomicon/id.git"
+    "url": "git://github.com/authnomicon/ns.git"
   },
   "bugs": {
-    "url": "http://github.com/authnomicon/id/issues"
+    "url": "http://github.com/authnomicon/ns/issues"
   },
   "license": "MIT",
   "licenses": [
@@ -22,7 +22,7 @@
   ],
   "main": "./app",
   "assembly": {
-    "namespace": "org.authnomicon/id",
+    "namespace": "org.authnomicon/ns",
     "components": [
       "main"
     ]
