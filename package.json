@@ -30,9 +30,10 @@
     ]
   },
   "dependencies": {
+    "fingro": "git+https://github.com/jaredhanson/fingro.git",
     "fingro-lrdd": "git+https://github.com/jaredhanson/fingro-lrdd.git",
-    "fingro-webfinger": "git+https://github.com/jaredhanson/fingro-webfinger.git",
-    "fingro-mx": "git+https://github.com/jaredhanson/fingro-mx.git"
+    "fingro-mx": "git+https://github.com/jaredhanson/fingro-mx.git",
+    "fingro-webfinger": "git+https://github.com/jaredhanson/fingro-webfinger.git"
   },
   "devDependencies": {
     "make-node": "^0.3.0",
