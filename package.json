@@ -29,7 +29,9 @@
       "webfinger/protocol"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "fingro-webfinger": "git+https://github.com/jaredhanson/fingro-webfinger.git"
+  },
   "devDependencies": {
     "make-node": "^0.3.0",
     "mocha": "^2.0.0",
