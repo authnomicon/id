@@ -4,4 +4,5 @@ exports = module.exports = function() {
   return webfinger();
 };
 
+exports['@implements'] = 'http://i.bixbyjs.org/uns/webfinger/Resolver';
 exports['@name'] = 'webfinger';

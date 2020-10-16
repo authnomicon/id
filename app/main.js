@@ -9,7 +9,7 @@ exports = module.exports = function(resolver) {
   return api;
 };
 
-exports['@implements'] = 'http://schemas.authnomicon.org/js/ns';
+exports['@implements'] = 'http://i.bixbyjs.org/uns';
 exports['@singleton'] = true;
 exports['@require'] = [
   './resolver'
